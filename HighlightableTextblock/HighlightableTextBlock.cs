@@ -228,7 +228,8 @@ namespace HighlightableTextBlock
 
                 if (!String.IsNullOrEmpty(toHighlight))
                 {
-                    var regexOptions = GetIgnoreCase(textblock) ? RegexOptions.IgnoreCase : RegexOptions.None;
+                    var ignoreCase = GetIgnoreCase(textblock);
+                    var regexOptions = ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None;
                     
                     var matches = Regex.Split(text, String.Format("({0})", Regex.Escape(toHighlight)), regexOptions);
 
@@ -239,7 +240,7 @@ namespace HighlightableTextBlock
 
                     foreach (var subString in matches)
                     {
-                        if (String.Compare(subString, toHighlight, true) == 0)
+                        if (String.Compare(subString, toHighlight, ignoreCase) == 0)
                         {
                             var formattedText = new Run(subString)
                             {

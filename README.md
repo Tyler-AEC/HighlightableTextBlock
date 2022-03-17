@@ -22,3 +22,4 @@ After installing HighlightableTextBlock:
   * Bold - controls:HighlightableTextBlock.Bold="True"
   * Italic - controls:HighlightableTextBlock.Italic="True"
   * Underline - controls:HighlightableTextBlock.Underline="True"
+  * IgnoreCase - controls:HighlightableTextBlock.IgnoreCase="True"
